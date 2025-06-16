@@ -1,11 +1,11 @@
-import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import react from 'react';
 
 function Page404() {
-  const navigate = UseNavigate();
+  const navigate = useNavigate();
 
   const goHome = () => {
-    navigate('/Home.jsx')
+    navigate('/')
   }
   
   return (
