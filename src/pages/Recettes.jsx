@@ -4,6 +4,7 @@ function Recettes() {
   return (
     <>
         <h1>Recette</h1>
+        <Link to="../404">Lien 404</Link>
     </>
   );
 }
