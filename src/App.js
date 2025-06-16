@@ -8,6 +8,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <p className="bg-black rounded-lg p-3">Hello tout le monde</p>
         <a
           className="App-link"
           href="https://reactjs.org"
