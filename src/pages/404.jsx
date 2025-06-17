@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import sorcier from '../image404-sorcier-orage.png';
+import sorcier from '../img/image404-sorcier-orage.png';
 
 function Page404() {
   const navigate = useNavigate();
