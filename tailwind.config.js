@@ -19,6 +19,7 @@ module.exports = {
       'dark2-grey': '#717171',
       'transparent': 'transparent',
       'white': 'white',
+      'black': 'black',
     }
   },
   plugins: [],
