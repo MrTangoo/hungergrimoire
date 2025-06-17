@@ -4,7 +4,7 @@ import '../fonts.css'
 function Footer() {
   return (
     <>
-        <div className="bg-gray-200 fixed bottom-0 left-0 w-full text-center py-4 shadow">
+        <div className="bg-light-grey w-full text-center py-4 shadow">
             <div className="flex justify-center">
                 <div className="pe-10">
                     <div className="text-3xl">
@@ -17,13 +17,15 @@ function Footer() {
                 <div className="h-32 w-0.5 bg-white"/>
 
                 <div className="ps-10">
-                    <div className="font-bold flex justify-center text-2xl">
+                    <div className="font-bold text-2xl mb-4">
                         <h1>Développeurs :</h1>
                     </div>
-                    <p>Mathieu Burnat: <a href="https://github.com/MathieuBurnat">https://github.com/MathieuBurnat</a></p>
-                    <p>Anduan Berisha: <a href="https://github.com/AnduanBerisha">https://github.com/AnduanBerisha</a></p>
-                    <p>Aleksa Mihajlovic: <a href="https://github.com/lexas220">https://github.com/lexas220</a></p>
-                    <p>Elia Portela: <a href="https://github.com/IlP4rAd0xlI">https://github.com/IlP4rAd0xlI</a></p>
+                    <div className="flex flex-col gap-2">
+                        <a href="https://github.com/MathieuBurnat">Mathieu Burnat</a>
+                        <a href="https://github.com/AnduanBerisha">Anduan Berisha</a>
+                        <a href="https://github.com/lexas220">Aleksa Mihajlovic</a>
+                        <a href="https://github.com/IlP4rAd0xlI">Elia Portela</a>
+                    </div>
                 </div>
             </div>
 
