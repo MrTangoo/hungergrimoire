@@ -13,7 +13,7 @@ function Home() {
         <Title />
         <IngredientSearchBar />
         <Carousel />
-        {/* <Link to="./About">Lien about</Link> */}
+        <Link class="flex items-center justify-center bg-light-grey rounded-lg h-9 px-5" to="./Recettes">Voir toutes les recettes</Link>
     </div>
   );
 }
