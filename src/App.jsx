@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Recettes from './pages/Recettes';
 import About from './pages/About';
 import Page404 from './pages/404';
-import Chrono from './components/Chrono' // import du chrono, c'est temporaire, juste histoire que je puisse mieux voir les modifications
+import Chrono from './components/Chrono' // import du chronometre, c'est temporaire, juste histoire que je puisse mieux voir les modifications
 
 function App() {
   return (
