@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom';
+import lightgreen_wizard from '../img/wizard_lightgreen.png'
 import Header from '../components/Header';
 import Title from '../components/Title';
-import Carousel from '../components/Carousel';
 import IngredientSearchBar from '../components/IngredientSearchBar';
+import Carousel from '../components/Carousel';
 
 function Home() {
   return (
-    <>
+    <div class="flex flex-col items-center justify-center bg-lighter-grey">
         <Header />
-        <h1>salut</h1>
-        <Link to="./About">Lien about</Link>
+        <img class="w-32 fixed top-4 right-3" src={lightgreen_wizard}></img>
         <Title />
         <IngredientSearchBar />
         <Carousel />
-    </>
+        {/* <Link to="./About">Lien about</Link> */}
+    </div>
   );
 }
 
