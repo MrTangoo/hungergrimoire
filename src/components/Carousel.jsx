@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import Card from './Card'
-import test from '../img/wizard_darkgreen.png'
+import Lasagnes_img from '../img/lasagnes_img.jpg'
 import React from 'react';
 
 function Carousel() {
   return (
     <div className='w-full flex justify-center items-center p-[2%]'>
-      <Card cardImg={test} reciepName='Lasagnes' nbPeople='4' reciepUrl='./404' />
+      <Card cardImg={Lasagnes_img} reciepName='Lasagnes' nbPeople='4' reciepUrl='./404' />
     </div>
   );
 }
