@@ -6,7 +6,7 @@ import React from 'react';
 function Carousel() {
   return (
     <div className='w-full flex justify-center items-center p-[2%]'>
-      <Card cardImg={test} reciepName="Lasagnes" nbPeople="4" reciepUrl="./404" />
+      <Card cardImg={test} reciepName='Lasagnes' nbPeople='4' reciepUrl='./404' />
     </div>
   );
 }
