@@ -1,5 +1,3 @@
-import test_img from '../img/test_img.jpg';
-
 function Card({cardColor, cardImg, reciepName, ingredients, nbPeople, reciepDuration, reciepUrl}) {
   return (
     <>
