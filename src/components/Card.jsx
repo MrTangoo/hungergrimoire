@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Card({ cardColor, cardImg, reciepName, ingredients, nbPeople, reciepDuration, reciepUrl }) {
   return (
-    <div className={`flex items-center justify-center w-72 h-96 ${cardColor.bg} rounded-3xl scale-90`}>
+    <div className={`flex items-center justify-center w-69 h-96 ${cardColor.bg} rounded-3xl scale-90`}>
       <div className={`h-full ${cardColor.border} scale-90 rounded-3xl`}>
         <div className='h-full flex flex-col items-center justify-between scale-90'>
           <img className='rounded-3xl' src={cardImg} />
