@@ -1,3 +1,4 @@
+import Chrono from '../components/Chrono';
 import PouletCurry from '../img/recettes/poulet_curry_img.jpg'
 import sorcier from '../img/wizard/wizard_darkgreen.png'
 
