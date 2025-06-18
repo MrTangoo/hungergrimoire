@@ -5,7 +5,7 @@ import StopSvg from '../img/svg/stop-small.svg';
 import RestartSvg from '../img/svg/restart-small.svg';
 
 // Import Composant Chrono dans autres fichier (changer le 5 par les minutes correspondantes à la recette) :
-// <Chrono MinutesCustom={5} />
+// Code : <Chrono MinutesCustom={5} />
 
 
 function Chrono({ MinutesCustom }) { // paramètres pour changer les minutes après, je met 5min pour test
