@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import lightgreen_wizard from '../img/wizard_lightgreen.png';
+import lightgreen_wizard from '../img/wizard/wizard_lightgreen.png';
 import Title from '../components/Title';
 import IngredientSearchBar from '../components/IngredientSearchBar';
 import Carousel from '../components/Carousel';
