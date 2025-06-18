@@ -3,6 +3,7 @@ import lightgreen_wizard from '../img/wizard/wizard_lightgreen.png';
 import Title from '../components/Title';
 import IngredientSearchBar from '../components/IngredientSearchBar';
 import Carousel from '../components/Carousel';
+import Chrono from '../components/Chrono';
 
 function Home() {
   return (

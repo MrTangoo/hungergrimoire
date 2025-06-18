@@ -26,7 +26,7 @@ function Chrono({ MinutesCustom }) { // paramètres pour changer les minutes apr
     } = useTimer({ expiryTimestamp: time});
 
     return(
-        <div className="flex justify-center items-center h-screen w-screen">
+        <div className="flex justify-center items-center">
             <div className="bg-dark-grey rounded-full p-4 w-80 flex items-center justify-center">
                 <div className="text-2xl text-white items-center mr-20">
                     {minutes}:{seconds < 10 ? `0${seconds}` : seconds} {/* opérateur ternaire, si sec < 10 alors ajt 0 devant, par exemple 9 sec -> 09 sec */}
