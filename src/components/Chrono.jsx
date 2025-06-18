@@ -4,8 +4,14 @@ import PlaySvg from '../img/svg/play.svg';
 import StopSvg from '../img/svg/square.svg';
 import RestartSvg from '../img/svg/restart.svg';
 
-function Chrono({ MinutesCustom = 5 }) { // paramètres pour changer les minutes après, je met 5min pour test
-    
+// -------------! Comment utiliser les MinutesCustom !----------------------
+
+// on import le Chrono en lui disant que MinutesCustom = 5 , qui est 5 minutes par exemple, changer le 5 par les minutes correspondantes à la recette :
+// <Chrono MinutesCustom={5} />
+
+
+function Chrono({ MinutesCustom }) { // paramètres pour changer les minutes après, je met 5min pour test
+
     const time = new Date(); // on crée la variable du temps
     time.setSeconds(time.getSeconds() + MinutesCustom * 60) // on convertis les secondes en minutes
 
