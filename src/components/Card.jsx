@@ -10,7 +10,7 @@ function Card({cardColor, cardImg, reciepName, ingredients, nbPeople, reciepDura
               <h1 className='text-center w-1/2 h-8 bg-light-green text-2xl rounded-3xl'>{reciepName}</h1>
               <p className='text-center w-full p-4 bg-light-green text-s rounded-3xl'>{ingredients}</p>
               <p className='text-lg'>{nbPeople} personnes</p>
-              <Link className='text-center px-3 py-2 bg-light-grey rounded-3xl' to={reciepUrl}>Ouvrir</Link>
+              <Link className='text-center px-3 py-2 bg-light-grey rounded-3xl transition-all duration-300 ease-in-out hover:scale-110' to={reciepUrl}>Ouvrir</Link>
             </div>
           </div>
         </div>
