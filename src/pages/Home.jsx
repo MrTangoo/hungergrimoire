@@ -6,7 +6,7 @@ import Carousel from '../components/Carousel';
 
 function Home() {
   return (
-    <div className='flex flex-col items-center justify-center bg-lighter-grey'>
+    <div className='min-h-full flex flex-col items-center justify-center bg-lighter-grey'>
         <img className='w-32 fixed top-4 right-3' src={lightgreen_wizard}></img>
         <Title />
         <IngredientSearchBar />
