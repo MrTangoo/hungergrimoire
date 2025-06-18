@@ -5,8 +5,10 @@ function Card({ cardColor, cardImg, reciepName, ingredients, nbPeople, reciepDur
     <div className={`flex items-center justify-center w-69 h-96 ${cardColor.bg} rounded-3xl scale-90`}>
       <div className={`h-full ${cardColor.border} scale-90 rounded-3xl`}>
         <div className='h-full flex flex-col items-center justify-between scale-90'>
-          <img className='rounded-3xl' src={cardImg} />
-          <h1 className={`${cardColor.bg} text-center w-1/2 h-8 text-2xl rounded-3xl`}>
+          <div className="w-full aspect-video overflow-hidden rounded-3xl">
+            <img src={cardImg} className="w-full h-full object-cover" />
+          </div>
+          <h1 className={`${cardColor.bg} text-center px-[8%] h-8 text-2xl rounded-3xl`}>
             {reciepName}
           </h1>
           <p className={`${cardColor.bg} text-center w-full p-4 text-s rounded-3xl`}>

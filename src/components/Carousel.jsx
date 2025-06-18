@@ -2,6 +2,15 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import Card from './Card'
 import Lasagnes_img from '../img/lasagnes_img.jpg'
+import Omelette_img from '../img/omellette_img.jpg'
+import Chili_con_carne_img from '../img/chili_con_carne_img.jpg'
+import Gratin_daufinois_img from '../img/gratin_dauphinois_img.jpg'
+import Curry_img from '../img/curry_legumes_img.jpg'
+import Quiche_img from '../img/quiche_loraine_img.jpg'
+import Poulet_img from '../img/poulet_roti.jpeg'
+import Tajine_img from '../img/tajine_img.jpg'
+import Pizza_img from '../img/pizza_img.jpg'
+import Soupe_img from '../img/soupe_img.jpg'
 import '../css/Carousel.css';
 
 // swiper imports
@@ -16,63 +25,95 @@ const recipes = [
   {
     cardColor: { bg: 'bg-light-green', border: 'bg-dark-green' },
     cardImg: Lasagnes_img,
-    reciepName: 'Tartiflette',
-    ingredients: 'Pommes de terre, reblochon...',
+    reciepName: 'Lasagnes',
+    ingredients: 'Pâtes, viande hachée, sauce tomate, . . .',
     nbPeople: 4,
-    reciepDuration: 30,
-    reciepUrl: '/recettes/tartiflette',
+    reciepDuration: 45,
+    reciepUrl: '/recettes/lasagnes',
   },
-
-  {
-    cardColor: { bg: 'bg-light-green', border: 'bg-dark-green' },
-    cardImg: Lasagnes_img,
-    reciepName: 'Tartiflette2',
-    ingredients: 'Pommes de terre, reblochon...',
-    nbPeople: 4,
-    reciepDuration: 30,
-    reciepUrl: '/recettes/tartiflette',
-  },
-
-  {
-    cardColor: { bg: 'bg-yellow', border: 'bg-dark-green' },
-    cardImg: Lasagnes_img,
-    reciepName: 'Tartiflette',
-    ingredients: 'Pommes de terre, reblochon...',
-    nbPeople: 4,
-    reciepDuration: 30,
-    reciepUrl: '/recettes/tartiflette',
-  },
-
   {
     cardColor: { bg: 'bg-orange', border: 'bg-dark-green' },
-    cardImg: Lasagnes_img,
-    reciepName: 'Tartiflette2',
-    ingredients: 'Pommes de terre, reblochon...',
-    nbPeople: 4,
-    reciepDuration: 30,
-    reciepUrl: '/recettes/tartiflette',
+    cardImg: Omelette_img,
+    reciepName: 'Omelette',
+    ingredients: 'Œufs, oignons, fromage',
+    nbPeople: 2,
+    reciepDuration: 10,
+    reciepUrl: '/recettes/omelette',
   },
-
+  {
+    cardColor: { bg: 'bg-yellow', border: 'bg-dark-green' },
+    cardImg: Chili_con_carne_img,
+    reciepName: 'Chili Con Carne',
+    ingredients: 'Haricots rouges, viande, tomates, . . .',
+    nbPeople: 5,
+    reciepDuration: 40,
+    reciepUrl: '/recettes/chili',
+  },
   {
     cardColor: { bg: 'bg-light-green', border: 'bg-dark-green' },
-    cardImg: Lasagnes_img,
-    reciepName: 'Tartiflette',
-    ingredients: 'Pommes de terre, reblochon...',
+    cardImg: Gratin_daufinois_img,
+    reciepName: 'Gratin dauphinois',
+    ingredients: 'Pommes de terre, crème, ail, . . .',
     nbPeople: 4,
-    reciepDuration: 30,
-    reciepUrl: '/recettes/tartiflette',
+    reciepDuration: 60,
+    reciepUrl: '/recettes/gratin-dauphinois',
   },
-
+  {
+    cardColor: { bg: 'bg-orange', border: 'bg-dark-green' },
+    cardImg: Curry_img,
+    reciepName: 'Curry de légumes',
+    ingredients: 'Courgette, carotte, lait coco, curry, . . .',
+    nbPeople: 3,
+    reciepDuration: 35,
+    reciepUrl: '/recettes/curry-legumes',
+  },
+  {
+    cardColor: { bg: 'bg-yellow', border: 'bg-dark-green' },
+    cardImg: Quiche_img,
+    reciepName: 'Quiche Lorraine',
+    ingredients: 'Lardons, œufs, crème, . . .',
+    nbPeople: 6,
+    reciepDuration: 30,
+    reciepUrl: '/recettes/quiche-lorraine',
+  },
   {
     cardColor: { bg: 'bg-light-green', border: 'bg-dark-green' },
-    cardImg: Lasagnes_img,
-    reciepName: 'Tartiflette2',
-    ingredients: 'Pommes de terre, reblochon...',
+    cardImg: Poulet_img,
+    reciepName: 'Poulet rôti',
+    ingredients: 'Poulet, herbes, pommes de terre, . . .',
+    nbPeople: 4,
+    reciepDuration: 75,
+    reciepUrl: '/recettes/poulet-roti',
+  },
+  {
+    cardColor: { bg: 'bg-orange', border: 'bg-dark-green' },
+    cardImg: Tajine_img,
+    reciepName: 'Tajine de légumes',
+    ingredients: 'Navets, courgettes, pois chiches, . . .',
+    nbPeople: 4,
+    reciepDuration: 50,
+    reciepUrl: '/recettes/tajine-legumes',
+  },
+  {
+    cardColor: { bg: 'bg-yellow', border: 'bg-dark-green' },
+    cardImg: Pizza_img,
+    reciepName: 'Pizza maison',
+    ingredients: 'Pâte, sauce tomate, fromage, . . .',
+    nbPeople: 2,
+    reciepDuration: 25,
+    reciepUrl: '/recettes/pizza',
+  },
+  {
+    cardColor: { bg: 'bg-light-green', border: 'bg-dark-green' },
+    cardImg: Soupe_img,
+    reciepName: 'Soupe de légumes',
+    ingredients: 'Carottes, poireaux, pommes de terre, . . .',
     nbPeople: 4,
     reciepDuration: 30,
-    reciepUrl: '/recettes/tartiflette',
-  },
+    reciepUrl: '/recettes/soupe-legumes',
+  }
 ]
+
 // end cards data
 
 
