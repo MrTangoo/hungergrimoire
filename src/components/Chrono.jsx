@@ -17,8 +17,7 @@ function Chrono({ MinutesCustom = 5 }) { // paramètres pour changer les minutes
         pause,
         resume,
         restart,
-    } = useTimer({ expiryTimestamp: time });
-    // expiryTimestamp veut dire que le temps est terminé par la spécification de time
+    } = useTimer({ expiryTimestamp: time});
 
     return(
         <div className="bg-light-green h-500px flex flex-col items-center justify-center">
@@ -26,7 +25,7 @@ function Chrono({ MinutesCustom = 5 }) { // paramètres pour changer les minutes
                 {minutes}:{seconds < 10 ? `0${seconds}` : seconds} {/* opérateur ternaire, si sec < 10 alors ajt 0 devant, par exemple 9 sec -> 09 sec */}
             </div>
             <div>
-                <button onClick={isRunning ? pause : start} className="mr-5">
+                <button onClick={isRunning ? pause : resume} className="mr-5">
                     <img src={isRunning ? StopSvg : PlaySvg} alt={isRunning ? "Stop" : "Play"} />
                 </button>
                 <button onClick={() => restart(time)}>
