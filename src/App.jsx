@@ -1,6 +1,7 @@
 import './css/App.css';
 import './fonts.css'
 import { Routes, Route } from 'react-router-dom';
+import Layout from './pages/Layout'
 import Home from './pages/Home';
 import Recettes from './pages/Recettes';
 import About from './pages/About';
@@ -11,12 +12,13 @@ function App() {
   return (
     <>
       <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/Home' element={<Home />}/>
+          <Route path='/' element={<Layout />}>
+          <Route index element={<Home />}/>
           <Route path='/Recettes' element={<Recettes />}/>
           <Route path='/About' element={<About />}/>
           <Route path='/Chrono' element={<Chrono />} />
           <Route path='*' element={<Page404 />} />
+          </Route>
       </Routes>
     </>
   );
