@@ -4,9 +4,7 @@ import PlaySvg from '../img/svg/play.svg';
 import StopSvg from '../img/svg/square.svg';
 import RestartSvg from '../img/svg/restart.svg';
 
-// -------------! Comment utiliser les MinutesCustom !----------------------
-
-// on import le Chrono en lui disant que MinutesCustom = 5 , qui est 5 minutes par exemple, changer le 5 par les minutes correspondantes à la recette :
+// Import Composant Chrono dans autres fichier (changer le 5 par les minutes correspondantes à la recette) :
 // <Chrono MinutesCustom={5} />
 
 
