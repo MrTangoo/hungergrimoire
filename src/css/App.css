@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Inria_Sans-Bold';
+    src: url('../fonts/Megrim/Inria_Sans/InriaSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
   font-family: Inria_Sans-Regular;
 }
