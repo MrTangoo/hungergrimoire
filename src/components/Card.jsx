@@ -8,16 +8,16 @@ function Card({ cardColor, cardImg, reciepName, ingredients, nbPeople, reciepDur
           <div className="w-full aspect-video overflow-hidden rounded-3xl">
             <img src={cardImg} className="w-full h-full object-cover" />
           </div>
-          <h1 className={`${cardColor.bg} text-center px-[8%] rounded-3xl`}>
+          <h1 className={`${cardColor.bg} text-center text-2xl px-[8%] rounded-3xl`}>
             {reciepName}
           </h1>
-          <p className={`${cardColor.bg} text-center w-full p-4 text-s rounded-3xl`}>
+          <p className={`${cardColor.bg} text-center w-full p-2 lg:text-base sm:text-sm rounded-3xl`}>
             {ingredients}
           </p>
           <p className='text-lg'>{nbPeople} personnes</p>
           <p className='text-lg'>{reciepDuration}'</p>
           <Link
-            className='text-center px-3 py-2 bg-light-grey rounded-3xl transition-all duration-1000 ease-in-out hover:scale-110'
+            className='text-center text-base px-3 py-2 bg-light-grey rounded-3xl transition-all duration-1000 ease-in-out hover:scale-110'
             to={reciepUrl}
           >
             Ouvrir
