@@ -43,7 +43,7 @@ function IngredientSearchBar() {
     if (value.length > 0) {
       const filtered = ingredients.filter(ingredient =>
         ingredient.toLowerCase().includes(value.toLowerCase())
-      ).slice(0, 3);
+      ).slice(0, 3); // limite de 3 ingrédients max
       setFilteredIngredients(filtered);
     } else {
       setFilteredIngredients([]);
