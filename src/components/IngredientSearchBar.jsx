@@ -1,4 +1,38 @@
+import { useState } from "react";
+
 function IngredientSearchBar() {
+
+  const ingredients = [
+  'Œuf', 'Salade', 'Tomate', 'Concombre', 'Carotte', 'Oignon', 'Poivron',
+  'Avocat', 'Laitue', 'Radis', 'Maïs', 'Thon', 'Poulet', 'Fromage',
+  'Pain', 'Croutons', 'Mozzarella', 'Olives', 'Vinaigrette', 'Riz', 'Pâtes',
+  'Lentilles', 'Pois chiches', 'Haricots rouges', 'Saumon', 'Tofu', 'Crevettes',
+  'Champignons', 'Courgette', 'Aubergine', 'Brocoli', 'Chou-fleur', 'Épinards',
+  'Roquette', 'Betterave', 'Noix', 'Amandes', 'Noisettes',
+  'Graines de tournesol', 'Graines de courge', 'Feta', 'Parmesan', 'Ricotta',
+  'Yaourt nature', 'Mayonnaise', 'Moutarde', 'Huile d’olive', 'Vinaigre balsamique',
+  'Citron', 'Basilic', 'Persil', 'Coriandre', 'Menthe', 'Aneth',
+  'Cornichons', 'Piments', 'Paprika', 'Curry', 'Sel', 'Poivre', 'Ketchup',
+  'Sauce barbecue', 'Tabasco', 'Œuf dur', 'Œuf poché', 'Œuf brouillé',
+  'Lait', 'Crème fraîche', 'Beurre', 'Pommes de terre', 'Patate douce',
+  'Navet', 'Topinambour', 'Céleri', 'Fenouil', 'Artichaut', 'Asperge',
+  'Chou rouge', 'Chou vert', 'Chou chinois', 'Pois mange-tout', 'Haricots verts',
+  'Mâche', 'Endive', 'Cresson', 'Tomme', 'Comté', 'Boursin', 'Raclette',
+  'Anchois', 'Sardines', 'Truite', 'Morue', 'Palourdes', 'Moules', 'Calmars',
+  'Encornets', 'Boulgour', 'Quinoa', 'Polenta', 'Semoule', 'Farine',
+  'Pain de mie', 'Baguette', 'Tortilla', 'Galette', 'Wrap', 'Brioche',
+  'Croissant', 'Pain complet', 'Pain de seigle', 'Toasts', 'Graines de sésame',
+  'Graines de lin', 'Graines de chia', 'Ciboulette', 'Oseille', 'Laurier',
+  'Thym', 'Romarin', 'Origan', 'Estragon', 'Gingembre', 'Ail', 'Échalote',
+  'Câpres', 'Zeste de citron', 'Zeste d’orange', 'Miel', 'Sucre',
+  'Sirop d’érable', 'Confiture', 'Compote', 'Pomme', 'Banane', 'Fraise',
+  'Framboise', 'Myrtille', 'Cerise', 'Raisin', 'Orange', 'Clémentine',
+  'Pamplemousse', 'Poire', 'Pêche', 'Nectarine', 'Kiwi', 'Mangue', 'Ananas',
+  'Melon', 'Pastèque', 'Figues', 'Dattes', 'Pruneaux', 'Abricot sec',
+  'Raisins secs', 'Chocolat', 'Noix de coco râpée', 'Avoine', 'Corn flakes',
+  'Granola'
+];
+
   return (
     <>
         <div className='w-full max-w-sm min-w-[200px]'>
