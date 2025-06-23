@@ -76,7 +76,7 @@ function IngredientSearchBar() {
 
           { /* affiche div uniquement si l'input n'est pas vide */ }
           {filteredIngredients.length > 0 && (
-            <div className='absolute z-10 mt-1 w-full bg-black border border-gray-300 rounded-md shadow-lg'>
+            <div className='absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg'>
               {filteredIngredients.map((ingredient, index) => ( // map c'est pour itérer les ingrédients de filteredIngredients
                 <div
                   key={index} // clé de l'index actuel
