@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Inria_Sans-Light';
+    src: url('../fonts/Megrim/Inria_Sans/InriaSans-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
   font-family: Inria_Sans-Regular;
 }
