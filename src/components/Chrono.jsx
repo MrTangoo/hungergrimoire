@@ -21,7 +21,7 @@ function Chrono({ MinutesCustom }) { // paramètres pour changer les minutes apr
         pause,
         resume,
         restart,
-    } = useTimer({ expiryTimestamp: time});
+    } = useTimer({ expiryTimestamp: time, autoStart: false});
 
     return(
         <div className="flex justify-center items-center">
