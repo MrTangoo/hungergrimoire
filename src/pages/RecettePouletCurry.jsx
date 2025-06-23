@@ -2,7 +2,7 @@ import Chrono from '../components/Chrono';
 import PouletCurry from '../img/recettes/poulet_curry_img.jpg'
 import sorcier from '../img/wizard/wizard_darkgreen.png'
 
-function RecetteTarteEpinard() {
+function RecettePouletCurry() {
   return (
     <>
         <div className="flex gap-8 bg-dark-green pl-5"> {/* Toute la recette  */}
@@ -47,6 +47,9 @@ function RecetteTarteEpinard() {
             <p>2. Couper le poulet en fines lamelles. Le mettre dans la poêle.</p>
             <p>3. Rajouter le miel, le jus du citron et saupoudrer de curry (ne pas verser tout le curry). Laisser dans la poêle, jusqu'à ce que le poulet soit complètement cuit.</p>
             <p>4. Faire cuire le riz.</p>
+            <div className='flex pt-4 pb-4'>
+                <Chrono MinutesCustom={15}/>
+            </div>
             <p>5. Rajouter la crème fraîche au mélange, dans la poêle. Bien mélanger, puis mettre le reste de curry. Saler</p>
             <p>6. Mélanger avec le riz et servir.</p>
 
@@ -59,4 +62,4 @@ function RecetteTarteEpinard() {
   );
 }
 
-export default RecetteTarteEpinard;
+export default RecettePouletCurry;
