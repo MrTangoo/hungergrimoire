@@ -76,11 +76,11 @@ function IngredientSearchBar() {
 
           { /* affiche div uniquement si l'input n'est pas vide */ }
           {filteredIngredients.length > 0 && (
-            <div className='absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg'>
+            <div className='absolute z-10 mt-1 w-full text-white bg-dark2-grey border-grey-300 rounded-md grey-lg'>
               {filteredIngredients.map((ingredient, index) => ( // map c'est pour itérer les ingrédients de filteredIngredients
                 <div
                   key={index} // clé de l'index actuel
-                  className='p-2 cursor-pointer hover:bg-gray-200'
+                  className='p-2 cursor-pointer hover:bg-medium-grey'
                   onClick={() => handleIngredientClick(ingredient)}
                 >
                   { /* ici on affiche le nom de l'ingrédient dans la div */ }
