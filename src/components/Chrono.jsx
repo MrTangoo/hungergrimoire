@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTimer } from 'react-timer-hook';
 import PlaySvg from '../img/svg/play-small.svg';
-import StopSvg from '../img/svg/stop-small.svg';
+import StopSvg from '../img/svg/pause-v2.svg';
 import RestartSvg from '../img/svg/restart-small.svg';
 
 // Import Composant Chrono dans autres fichier (changer le 5 par les minutes correspondantes à la recette) :
@@ -21,7 +21,7 @@ function Chrono({ MinutesCustom }) { // paramètres pour changer les minutes apr
         pause,
         resume,
         restart,
-    } = useTimer({ expiryTimestamp: time});
+    } = useTimer({ expiryTimestamp: time, autoStart: false});
 
     return(
         <div className="flex justify-center items-center">
