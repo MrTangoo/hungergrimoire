@@ -2,8 +2,11 @@ import { useState } from "react";
 
 function IngredientSearchBar() {
 
+  const [inputValue, setInputValue] = useState(""); // on stocke la valeur de l'input ici
+  const [filteredIngredients, setFilteredIngredients] = useState([]); // on filtre les ingrédients par rapport à l'input du user
+
   const ingredients = [
-  'Œuf', 'Salade', 'Tomate', 'Concombre', 'Carotte', 'Oignon', 'Poivron',
+  'Œuf', 'Oeuf', 'Oeufs', 'Salade', 'Tomate', 'Concombre', 'Carotte', 'Oignon', 'Poivron',
   'Avocat', 'Laitue', 'Radis', 'Maïs', 'Thon', 'Poulet', 'Fromage',
   'Pain', 'Croutons', 'Mozzarella', 'Olives', 'Vinaigrette', 'Riz', 'Pâtes',
   'Lentilles', 'Pois chiches', 'Haricots rouges', 'Saumon', 'Tofu', 'Crevettes',
@@ -31,24 +34,63 @@ function IngredientSearchBar() {
   'Melon', 'Pastèque', 'Figues', 'Dattes', 'Pruneaux', 'Abricot sec',
   'Raisins secs', 'Chocolat', 'Noix de coco râpée', 'Avoine', 'Corn flakes',
   'Granola'
-];
+]; // beaucoup d'ingrédients
+
+  const handleInputChange = (e) => { // fonction qui met à jour l'input du user (e = element), elle est appelée à chaque fois que l'input du user change
+    const value = e.target.value;
+    setInputValue(value);
+
+    if (value.length > 0) {
+      const filtered = ingredients.filter(ingredient =>
+        ingredient.toLowerCase().includes(value.toLowerCase())
+      ).slice(0, 3);
+      setFilteredIngredients(filtered);
+    } else {
+      setFilteredIngredients([]);
+    }
+  };
+
+  // fonction qui permet que si le user clique sur une recommendation, alors l'input est changé par la recommendation cliquée
+  const handleIngredientClick = (ingredient) => {
+    setInputValue(ingredient);
+    setFilteredIngredients([]);
+  };
 
   return (
     <>
-        <div className='w-full max-w-sm min-w-[200px]'>
-          <div className='relative'>
-            <input
-              className='border-transparent bg-dark-grey w-full placeholder:text-white/70 text-white text-sm border border-slate-200 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow'
-              placeholder='Entre tes ingrédients ici' 
-            />
-            <button
-              className='absolute top-1 right-1 flex items-center rounded bg-light-grey py-1 px-2.5 border border-transparent text-center text-sm transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
-              type='button'
-            >
-              Rechercher
-            </button> 
-          </div>
+      <div className='w-full max-w-sm min-w-[200px]'>
+        <div className='relative'>
+          <input
+            className='border-transparent bg-dark-grey w-full placeholder:text-white/70 text-white text-sm border border-slate-200 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow'
+            placeholder='Entre tes ingrédients ici'
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+          <button
+            className='absolute top-1 right-1 flex items-center rounded bg-light-grey py-1 px-2.5 border border-transparent text-center text-sm transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+            type='button'
+          >
+            Rechercher
+          </button>
+          { /* ----- La div de recommendation ici ----- */ }
+
+          { /* affiche div uniquement si l'input n'est pas vide */ }
+          {filteredIngredients.length > 0 && (
+            <div className='absolute z-10 mt-1 w-full bg-black border border-gray-300 rounded-md shadow-lg'>
+              {filteredIngredients.map((ingredient, index) => ( // map c'est pour itérer les ingrédients de filteredIngredients
+                <div
+                  key={index} // clé de l'index actuel
+                  className='p-2 cursor-pointer hover:bg-gray-200'
+                  onClick={() => handleIngredientClick(ingredient)}
+                >
+                  { /* ici on affiche le nom de l'ingrédient dans la div */ }
+                  {ingredient}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
+      </div>
     </>
   );
 }
