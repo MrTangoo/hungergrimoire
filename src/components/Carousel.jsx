@@ -120,7 +120,7 @@ const recipes = [
   return (
     <>
       {/* carousel div (with arrows) */}
-      <div className="w-1/2 relative">
+      <div className="lg:w-1/2 md:w-4/5 w-[80%] md relative">
         {/* swiper things */}
         <Swiper
           modules={[Navigation]}
@@ -129,12 +129,12 @@ const recipes = [
             nextEl: '.swiper-button-next',
           }}
           // swiper style
-          spaceBetween={20}
-          slidesPerView={3}
+          spaceBetween={0}
+          slidesPerView={1}
           // breakpoints
           breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
             1024: { slidesPerView: 3 },
           }}
           className="multiple-slide-carousel relative"
@@ -156,8 +156,8 @@ const recipes = [
           ))}
         </Swiper>
           <div className=''>
-            <button className='swiper-button-prev !text-dark-grey group transition-all duration-500 rounded-full !-translate-x-16'></button>
-            <button className='swiper-button-next !text-dark-grey group transition-all duration-500 rounded-full !translate-x-16'></button>
+            <button className='invisible sm:visible swiper-button-prev !text-dark-grey group transition-all duration-500 rounded-full !-translate-x-16 scale-75'></button>
+            <button className='invisible sm:visible swiper-button-next !text-dark-grey group transition-all duration-500 rounded-full !translate-x-16 scale-75'></button>
           </div>
       </div>
     </>
