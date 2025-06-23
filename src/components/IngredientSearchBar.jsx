@@ -45,7 +45,7 @@ function IngredientSearchBar() {
               className='absolute top-1 right-1 flex items-center rounded bg-light-grey py-1 px-2.5 border border-transparent text-center text-sm transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
               type='button'
             >
-              Search
+              Rechercher
             </button> 
           </div>
         </div>
