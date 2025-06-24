@@ -26,7 +26,7 @@ const StaggeredDropDown = () => {
         <button
           onClick={() => setOpen((pv) => !pv)}
         >
-            <DropDownNavBtn />
+            <DropDownNavBtn isOpen={open} />
             {/* <IoMenu /> */}
         </button>
 

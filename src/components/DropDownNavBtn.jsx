@@ -1,31 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const DropDownNavBtn = () => {
+const DropDownNavBtn = ({ isOpen }) => {
   return (
     <StyledWrapper>
-      <label className="burger" htmlFor="burger">
-        <input type="checkbox" id="burger" />
+      <div className={`burger ${isOpen ? "open" : ""}`}>
         <span />
         <span />
         <span />
-      </label>
+      </div>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   .burger {
     position: relative;
     width: 40px;
     height: 30px;
-    background: transparent;
     cursor: pointer;
-    display: block;
-  }
-
-  .burger input {
-    display: none;
   }
 
   .burger span {
@@ -35,14 +28,12 @@ const StyledWrapper = styled.div`
     width: 100%;
     background: black;
     border-radius: 9px;
-    opacity: 1;
+    transition: 0.5s ease-in-out;
     left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
   }
 
   .burger span:nth-of-type(1) {
-    top: 0px;
+    top: 0;
     transform-origin: left center;
   }
 
@@ -54,25 +45,26 @@ const StyledWrapper = styled.div`
 
   .burger span:nth-of-type(3) {
     top: 100%;
-    transform-origin: left center;
     transform: translateY(-100%);
+    transform-origin: left center;
   }
 
-  .burger input:checked ~ span:nth-of-type(1) {
+  .burger.open span:nth-of-type(1) {
     transform: rotate(45deg);
     top: 0px;
     left: 5px;
   }
 
-  .burger input:checked ~ span:nth-of-type(2) {
-    width: 0%;
+  .burger.open span:nth-of-type(2) {
     opacity: 0;
   }
 
-  .burger input:checked ~ span:nth-of-type(3) {
+  .burger.open span:nth-of-type(3) {
     transform: rotate(-45deg);
     top: 28px;
     left: 5px;
-  }`;
+  }
+`;
+
 
 export default DropDownNavBtn;
