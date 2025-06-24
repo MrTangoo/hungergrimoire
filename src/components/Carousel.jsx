@@ -19,7 +19,7 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-function Carousel( {slidesPerView, width} ) {
+function Carousel( {carouselType, displayIngredients} ) {
 // cards data
 const recipes = [
   {
@@ -115,12 +115,36 @@ const recipes = [
 ]
 
 // end cards data
+let carouselClass
+let slidesPerViewXs
+let slidesPerViewSm
+let slidesPerViewMd
+let slidesPerViewLg
+let slidesPerViewXl
+
+if (carouselType=="bigCards") {
+  carouselClass="xl:w-1/2 lg:w-2/3 md:w-4/5 w-[80%] md relative"
+  slidesPerViewXs=1
+  slidesPerViewSm=2
+  slidesPerViewMd=3
+  slidesPerViewLg=3
+  slidesPerViewXl=3
+}
+
+if (carouselType=="smallCards") {
+  carouselClass="lg:w-[85%] md:w-[80%] w-[90%] md relative"
+  slidesPerViewXs=3
+  slidesPerViewSm=4
+  slidesPerViewMd=5
+  slidesPerViewLg=6
+  slidesPerViewXl=8
+}
 
 
   return (
     <>
       {/* carousel div (with arrows) */}
-      <div className="lg:w-1/2 md:w-4/5 w-[80%] md relative">
+      <div className={carouselClass}>
         {/* swiper things */}
         <Swiper
           modules={[Navigation]}
@@ -130,12 +154,13 @@ const recipes = [
           }}
           // swiper style
           spaceBetween={0}
-          slidesPerView={1}
+          slidesPerView={slidesPerViewXs}
           // breakpoints
           breakpoints={{
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 3 },
+            640: { slidesPerView: slidesPerViewSm },
+            768: { slidesPerView: slidesPerViewMd },
+            1024: { slidesPerView: slidesPerViewLg },
+            1280: { slidesPerView: slidesPerViewXl },
           }}
           className="multiple-slide-carousel relative"
         >
@@ -151,6 +176,7 @@ const recipes = [
                 nbPeople={r.nbPeople}
                 reciepDuration={r.reciepDuration}
                 reciepUrl={r.reciepUrl}
+                displayIngredients={displayIngredients}
               />
             </SwiperSlide>
           ))}
