@@ -35,14 +35,13 @@ function IngredientSearchBar({ searchBarWidth = "w-full max-w-md" }) {
     'Melon', 'Pastèque', 'Figues', 'Dattes', 'Pruneaux', 'Abricot sec',
   ];
 
+  // couleurs possibles
   const colorTags = {
-    blue: "bg-blue-500",
-    red: "bg-red-500",
-    yellow: "bg-yellow-500",
-    green: "bg-green-500",
-    purple: "bg-purple-500",
-    indigo: "bg-indigo-500",
-    pink: "bg-pink-500",
+    cream: "bg-cream",
+    red: "bg-red",
+    yellow: "bg-yellow",
+    green: "bg-light-green",
+    pink: "bg-pink"
   };
 
   const randomColor = () => {
