@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Card({ cardColor, cardImg, reciepName, ingredients, nbPeople, reciepDuration, reciepUrl }) {
+function Card({ cardColor, cardImg, reciepName, ingredients, nbPeople, reciepDuration, reciepUrl, displayIngredients }) {
   return (
     <div className={`aspect-[4/5] scale-[78%] flex items-center justify-center ${cardColor.bg} rounded-3xl`}>
       <div className={`h-full ${cardColor.border} m-[5%] rounded-3xl`}>
@@ -11,7 +11,7 @@ function Card({ cardColor, cardImg, reciepName, ingredients, nbPeople, reciepDur
           <h1 className={`${cardColor.bg} text-center text-2xl px-[8%] rounded-3xl`}>
             {reciepName}
           </h1>
-          <p className={`${cardColor.bg} text-center w-full p-2 lg:text-base sm:text-sm rounded-3xl`}>
+          <p className={`${cardColor.bg} ${displayIngredients} text-center w-full p-2 lg:text-base sm:text-sm rounded-3xl`}>
             {ingredients}
           </p>
           <p className='text-lg'>{nbPeople} personnes</p>
