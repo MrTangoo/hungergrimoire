@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import IngredientSearchBar from '../components/IngredientSearchBar';
 import orange_wizard from '../img/wizard/wizard_orange.png';
-import Carousel from '../components/Carousel';
+import Categorie from '../components/Categorie';
 
 function Recettes() {
   return (
@@ -10,45 +10,38 @@ function Recettes() {
       <div className='py-20 flex flex-col items-center justify-center bg-lighter-grey'>
         <img className='w-32 absolute top-4 right-3' src={orange_wizard}></img>
         <IngredientSearchBar />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test1"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test2"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test3"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test4"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test5"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test6"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test7"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test8"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test9"
         />
-        <h1>Categorie</h1>
-        <Carousel 
-          // slidesPerView={6}
+        <Categorie 
+          categorieName="test10"
+        />
+        <Categorie 
+          categorieName="test11"
         />
       </div>
     </>
