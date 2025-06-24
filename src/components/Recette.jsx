@@ -18,17 +18,21 @@ typeof item === "string" ? (
         <div className="flex gap-8 bg-dark-green pl-5">
           <div className="flex flex-col pt-10">
             <h2 className="text-xl mt-4 font-semibold">Ingrédients</h2>
-            {ListIngredients}
+            <div className="text-lg">
+              {ListIngredients}
+            </div>
 
             <h2 className="text-xl mt-4 font-semibold">Ustensiles</h2>
-            {ListUstensiles}
+            <div className="text-lg">
+              {ListUstensiles}
+            </div>
 
             <div className="flex bg-white mt-5 mb-5 p-3 rounded-lg">
               <div className="pr-4">
-                <p>Durée : {recette.duree}</p>
+                <p>Durée  : {recette.duree} min</p>
               </div>
               <div>
-                <p>Peronnes : {recette.personnes}</p>
+                <p>Personnes : {recette.personnes}</p>
               </div>
             </div>
           </div>
@@ -38,10 +42,12 @@ typeof item === "string" ? (
               <h1 className="text-5xl" style={{ fontFamily: 'Megrim' }}>{recette.nom}</h1>
               <img src={sorcier} alt="Sorcier" className="w-32 h-auto ml-auto mr-20" />
             </div>
-            <h2 className="text-xl mt-4 font-semibold">Étapes</h2>
-            {ListEtapes}
+            <h2 className="text-2xl mt-4 font-semibold">Étapes</h2>
+            <div className="text-2xl">
+              {ListEtapes}
+            </div>
             <div className="flex justify-end">
-              <img src={PouletCurry} alt="Image du poulet curry" className="w-80 h-auto mr-10 rounded-xl"/>
+              <img src={recette.image} alt={recette.nom} className="w-80 h-auto mr-10 rounded-xl"/>
             </div>
           </div>
         </div>
