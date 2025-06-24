@@ -19,7 +19,7 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-function Carousel( {carouselType} ) {
+function Carousel( {carouselType, displayIngredients} ) {
 // cards data
 const recipes = [
   {
@@ -176,6 +176,7 @@ if (carouselType=="smallCards") {
                 nbPeople={r.nbPeople}
                 reciepDuration={r.reciepDuration}
                 reciepUrl={r.reciepUrl}
+                displayIngredients={displayIngredients}
               />
             </SwiperSlide>
           ))}
