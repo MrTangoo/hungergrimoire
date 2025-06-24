@@ -19,7 +19,7 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-function Carousel() {
+function Carousel( {carouselType, displayIngredients} ) {
 // cards data
 const recipes = [
   {
@@ -115,12 +115,36 @@ const recipes = [
 ]
 
 // end cards data
+let carouselClass
+let slidesPerViewXs
+let slidesPerViewSm
+let slidesPerViewMd
+let slidesPerViewLg
+let slidesPerViewXl
+
+if (carouselType=="bigCards") {
+  carouselClass="xl:w-1/2 lg:w-2/3 md:w-4/5 w-[80%] md relative"
+  slidesPerViewXs=1
+  slidesPerViewSm=2
+  slidesPerViewMd=3
+  slidesPerViewLg=3
+  slidesPerViewXl=3
+}
+
+if (carouselType=="smallCards") {
+  carouselClass="lg:w-[85%] md:w-[80%] w-[90%] md relative"
+  slidesPerViewXs=3
+  slidesPerViewSm=4
+  slidesPerViewMd=5
+  slidesPerViewLg=6
+  slidesPerViewXl=8
+}
 
 
   return (
     <>
       {/* carousel div (with arrows) */}
-      <div className="w-1/2 relative">
+      <div className={carouselClass}>
         {/* swiper things */}
         <Swiper
           modules={[Navigation]}
@@ -129,13 +153,14 @@ const recipes = [
             nextEl: '.swiper-button-next',
           }}
           // swiper style
-          spaceBetween={20}
-          slidesPerView={3}
+          spaceBetween={0}
+          slidesPerView={slidesPerViewXs}
           // breakpoints
           breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            640: { slidesPerView: slidesPerViewSm },
+            768: { slidesPerView: slidesPerViewMd },
+            1024: { slidesPerView: slidesPerViewLg },
+            1280: { slidesPerView: slidesPerViewXl },
           }}
           className="multiple-slide-carousel relative"
         >
@@ -151,13 +176,14 @@ const recipes = [
                 nbPeople={r.nbPeople}
                 reciepDuration={r.reciepDuration}
                 reciepUrl={r.reciepUrl}
+                displayIngredients={displayIngredients}
               />
             </SwiperSlide>
           ))}
         </Swiper>
           <div className=''>
-            <button className='swiper-button-prev !text-dark-grey group transition-all duration-500 rounded-full !-translate-x-16'></button>
-            <button className='swiper-button-next !text-dark-grey group transition-all duration-500 rounded-full !translate-x-16'></button>
+            <button className='invisible sm:visible swiper-button-prev !text-dark-grey group transition-all duration-500 rounded-full !-translate-x-16 scale-75'></button>
+            <button className='invisible sm:visible swiper-button-next !text-dark-grey group transition-all duration-500 rounded-full !translate-x-16 scale-75'></button>
           </div>
       </div>
     </>
