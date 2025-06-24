@@ -34,6 +34,12 @@ function IngredientSearchBar() {
   'Melon', 'Pastèque', 'Figues', 'Dattes', 'Pruneaux', 'Abricot sec',
 ]; // beaucoup d'ingrédients
 
+  const colorTags = {
+    "blue": "blue",
+    "red": "red",
+    "yellow": "yellow"
+  };
+
   const handleInputChange = (e) => { // fonction qui met à jour l'input du user (e = element), elle est appelée à chaque fois que l'input du user change
     const value = e.target.value;
     setInputValue(value);
@@ -88,6 +94,10 @@ function IngredientSearchBar() {
             </div>
           )}
         </div>
+      </div>
+      <div className="tags flex justify-center items-end rounded-full w-20 bg-yellow">
+        <h1 className="flex mr-4px">Tag </h1>
+        <button className="flex ml-4">x</button>
       </div>
     </>
   );
