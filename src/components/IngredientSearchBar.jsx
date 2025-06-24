@@ -16,8 +16,8 @@ function IngredientSearchBar() {
   'Yaourt nature', 'Mayonnaise', 'Moutarde', 'Huile d’olive', 'Vinaigre balsamique',
   'Citron', 'Basilic', 'Persil', 'Coriandre', 'Menthe', 'Aneth',
   'Cornichons', 'Piments', 'Paprika', 'Curry', 'Sel', 'Poivre', 'Ketchup',
-  'Sauce barbecue', 'Tabasco', 'Œuf dur', 'Œuf poché', 'Œuf brouillé',
-  'Lait', 'Crème fraîche', 'Beurre', 'Pommes de terre', 'Patate douce',
+  'Sauce barbecue', 'Tabasco','Lait', 'Crème fraîche', 'Beurre', 'Pommes de terre',
+  'Patate douce', 'Granola', 'Corn flakes', 'Avoine', 'Noix de coco râpée',
   'Navet', 'Topinambour', 'Céleri', 'Fenouil', 'Artichaut', 'Asperge',
   'Chou rouge', 'Chou vert', 'Chou chinois', 'Pois mange-tout', 'Haricots verts',
   'Mâche', 'Endive', 'Cresson', 'Tomme', 'Comté', 'Boursin', 'Raclette',
@@ -32,8 +32,6 @@ function IngredientSearchBar() {
   'Framboise', 'Myrtille', 'Cerise', 'Raisin', 'Orange', 'Clémentine',
   'Pamplemousse', 'Poire', 'Pêche', 'Nectarine', 'Kiwi', 'Mangue', 'Ananas',
   'Melon', 'Pastèque', 'Figues', 'Dattes', 'Pruneaux', 'Abricot sec',
-  'Raisins secs', 'Chocolat', 'Noix de coco râpée', 'Avoine', 'Corn flakes',
-  'Granola'
 ]; // beaucoup d'ingrédients
 
   const handleInputChange = (e) => { // fonction qui met à jour l'input du user (e = element), elle est appelée à chaque fois que l'input du user change
