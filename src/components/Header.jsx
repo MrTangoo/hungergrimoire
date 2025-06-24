@@ -1,17 +1,10 @@
-import '../BoutonDropdown.css'
+import DropDownNav from './DropDownNav';
 
 function Header() {
   return (
     <>
-      <div className="w-full flex items-center gap-x-4 pt-3 pl-5 pb-3 bg-light-grey">
-
-        <label className="burger w-10 flex flex-col justify-center cursor-pointer" htmlFor="burger">
-          <input type="checkbox" id="burger" className="hidden" />
-          <span className="block w-6 h-0.5 bg-black mb-1"></span>
-          <span className="block w-6 h-0.5 bg-black mb-1"></span>
-          <span className="block w-6 h-0.5 bg-black"></span>
-        </label>
-
+      <div className="absolute top-0 z-10 w-full flex items-center gap-x-4 pt-3 pl-5 pb-3 bg-light-grey">
+        
         <div className="flex items-center gap-x-4 flex-grow">
 
           <div className="flex gap-x-5">
@@ -34,9 +27,9 @@ function Header() {
               Rechercher
             </button>
           </div>
+      <DropDownNav />
 
         </div>
-
       </div>
     </>
   );
