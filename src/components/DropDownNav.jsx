@@ -5,13 +5,19 @@ import {
   FiTrash,
   FiShare,
   FiPlusSquare,
+  FiGithub,
+  FiHome,
+  FiHash,
 
 } from "react-icons/fi";
+import { LuSwatchBook } from "react-icons/lu";
 import { IoMenu } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, useState } from "react";
 import { IconType } from "react-icons";
 import DropDownNavBtn from "./DropDownNavBtn"
+import { FaPizzaSlice } from "react-icons/fa6";
+import Carousel from './Carousel'
 
 
 const StaggeredDropDown = () => {
@@ -20,9 +26,9 @@ const StaggeredDropDown = () => {
 
   return (
 
-    <div className="flex items-center justify-center">
+    <div className="">
 
-      <motion.div animate={open ? "open" : "closed"} className="relative">
+      <motion.div animate={open ? "open" : "closed"}>
         <button
           onClick={() => setOpen((pv) => !pv)}
         >
@@ -34,16 +40,14 @@ const StaggeredDropDown = () => {
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-50%" }}
-          className="flex flex-col gap-2 p-2 rounded-lg bg-lighter-grey shadow-xl absolute top-[120%] left-[50%] w-[1000%] overflow-hidden"
+          className="flex flex-col gap-2 p-2 bg-light-grey shadow-xl absolute top-[100%] left-[50%] w-[100%] overflow-hidden h-dvh"
         >
-
-          <Option setOpen={setOpen} Icon={FiEdit} text="Edit" />
-          <Option setOpen={setOpen} Icon={FiPlusSquare} text="Duplicate" />
-          <Option setOpen={setOpen} Icon={FiShare} text="Share" />
-          <Option setOpen={setOpen} Icon={FiTrash} text="Remove" />
+          <Option setOpen={setOpen} Icon={FiHome} text="Home" />
+          <Option setOpen={setOpen} Icon={FiHash} text="About" />
+          <Option setOpen={setOpen} Icon={LuSwatchBook} text="Recettes" />
+          <Option setOpen={setOpen} Icon={FiGithub} text="Github" />
         </motion.ul>
       </motion.div>
-
     </div>
   );
 };
