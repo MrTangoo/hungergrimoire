@@ -29,7 +29,7 @@ const recipes = [
     ingredients: 'Pâtes, viande hachée, sauce tomate, . . .',
     nbPeople: 4,
     reciepDuration: 45,
-    reciepUrl: '/recettes/lasagnes',
+    reciepUrl: '/recette/lasagnes%20à%20la%20bolognaise',
   },
   {
     cardColor: { bg: 'bg-orange', border: 'bg-dark-green' },
@@ -38,7 +38,7 @@ const recipes = [
     ingredients: 'Œufs, oignons, fromage',
     nbPeople: 2,
     reciepDuration: 10,
-    reciepUrl: '/recettes/omelette',
+    reciepUrl: '/recette/omelette',
   },
   {
     cardColor: { bg: 'bg-yellow', border: 'bg-dark-green' },
@@ -47,7 +47,7 @@ const recipes = [
     ingredients: 'Haricots rouges, viande, tomates, . . .',
     nbPeople: 5,
     reciepDuration: 40,
-    reciepUrl: '/recettes/chili',
+    reciepUrl: '/recettes/chili', //faire
   },
   {
     cardColor: { bg: 'bg-light-green', border: 'bg-dark-green' },
@@ -56,7 +56,7 @@ const recipes = [
     ingredients: 'Pommes de terre, crème, ail, . . .',
     nbPeople: 4,
     reciepDuration: 60,
-    reciepUrl: '/recettes/gratin-dauphinois',
+    reciepUrl: '/recette/gratin%20dauphinois',
   },
   {
     cardColor: { bg: 'bg-orange', border: 'bg-dark-green' },
@@ -65,7 +65,7 @@ const recipes = [
     ingredients: 'Courgette, carotte, lait coco, curry, . . .',
     nbPeople: 3,
     reciepDuration: 35,
-    reciepUrl: '/recettes/curry-legumes',
+    reciepUrl: '/recette/curry%20aux%20légumes',
   },
   {
     cardColor: { bg: 'bg-yellow', border: 'bg-dark-green' },
@@ -74,7 +74,7 @@ const recipes = [
     ingredients: 'Lardons, œufs, crème, . . .',
     nbPeople: 6,
     reciepDuration: 30,
-    reciepUrl: '/recettes/quiche-lorraine',
+    reciepUrl: '/recette/quiche%20lorraine',
   },
   {
     cardColor: { bg: 'bg-light-green', border: 'bg-dark-green' },
@@ -83,7 +83,7 @@ const recipes = [
     ingredients: 'Poulet, herbes, pommes de terre, . . .',
     nbPeople: 4,
     reciepDuration: 75,
-    reciepUrl: '/recettes/poulet-roti',
+    reciepUrl: '/recette/poulet%20rôti',
   },
   {
     cardColor: { bg: 'bg-orange', border: 'bg-dark-green' },
@@ -92,7 +92,7 @@ const recipes = [
     ingredients: 'Navets, courgettes, pois chiches, . . .',
     nbPeople: 4,
     reciepDuration: 50,
-    reciepUrl: '/recettes/tajine-legumes',
+    reciepUrl: '/recette/tajine',
   },
   {
     cardColor: { bg: 'bg-yellow', border: 'bg-dark-green' },
@@ -101,7 +101,7 @@ const recipes = [
     ingredients: 'Pâte, sauce tomate, fromage, . . .',
     nbPeople: 2,
     reciepDuration: 25,
-    reciepUrl: '/recettes/pizza',
+    reciepUrl: '/recette/pizza%20margherita',
   },
   {
     cardColor: { bg: 'bg-light-green', border: 'bg-dark-green' },
@@ -110,7 +110,7 @@ const recipes = [
     ingredients: 'Carottes, poireaux, pommes de terre, . . .',
     nbPeople: 4,
     reciepDuration: 30,
-    reciepUrl: '/recettes/soupe-legumes',
+    reciepUrl: '/recette/soupe%20au%20melon',
   }
 ]
 
