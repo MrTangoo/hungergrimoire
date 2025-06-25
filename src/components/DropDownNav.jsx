@@ -1,39 +1,22 @@
 import {
-
-  FiEdit,
-  FiChevronDown,
-  FiTrash,
-  FiShare,
-  FiPlusSquare,
-  FiGithub,
   FiHome,
   FiHash,
-
+  FiGithub
 } from "react-icons/fi";
 import { LuSwatchBook } from "react-icons/lu";
-import { IoMenu } from "react-icons/io5";
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, useState } from "react";
-import { IconType } from "react-icons";
-import DropDownNavBtn from "./DropDownNavBtn"
-import { FaPizzaSlice } from "react-icons/fa6";
-import Carousel from './Carousel'
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import DropDownNavBtn from "./DropDownNavBtn";
 
 const StaggeredDropDown = () => {
-
   const [open, setOpen] = useState(false);
 
   return (
-
-    <div className="">
-
+    <div>
       <motion.div animate={open ? "open" : "closed"}>
-        <button
-          onClick={() => setOpen((pv) => !pv)}
-        >
-            <DropDownNavBtn isOpen={open} />
-            {/* <IoMenu /> */}
+        <button onClick={() => setOpen((prev) => !prev)}>
+          <DropDownNavBtn isOpen={open} />
         </button>
 
         <motion.ul
@@ -42,39 +25,64 @@ const StaggeredDropDown = () => {
           style={{ originY: "top", translateX: "-50%" }}
           className="flex flex-col gap-2 p-2 bg-light-grey shadow-xl absolute top-[100%] left-[50%] w-[100%] overflow-hidden h-dvh"
         >
-          <Option setOpen={setOpen} Icon={FiHome} text="Home" />
-          <Option setOpen={setOpen} Icon={FiHash} text="About" />
-          <Option setOpen={setOpen} Icon={LuSwatchBook} text="Recettes" />
-          <Option setOpen={setOpen} Icon={FiGithub} text="Github" />
+          <Option setOpen={setOpen} Icon={FiHome} text="Home" to="/" />
+          <Option setOpen={setOpen} Icon={FiHash} text="About" to="/About" />
+          <Option setOpen={setOpen} Icon={LuSwatchBook} text="Recettes" to="/Recettes" />
+          <Option
+            setOpen={setOpen}
+            Icon={FiGithub}
+            text="GitHub"
+            to="https://github.com/MathieuBurnat/HungerGrimoire/"
+            external
+          />
         </motion.ul>
       </motion.div>
     </div>
   );
 };
 
-
-const Option = ({ text, Icon, setOpen }) => {
-
-  return (
-
-    <motion.li
-      variants={itemVariants}
-      onClick={() => setOpen(false)}
-      className="flex items-center gap-2 w-full p-2 text-sm whitespace-nowrap rounded-md hover:bg-light-green transition-colors duration-1000 cursor-pointer"
-    >
+const Option = ({ text, Icon, setOpen, to, external = false }) => {
+  const content = (
+    <>
       <motion.span variants={actionIconVariants}>
         <Icon />
       </motion.span>
       <span>{text}</span>
+    </>
+  );
+
+  return (
+    <motion.li
+      variants={itemVariants}
+      onClick={() => setOpen(false)}
+      className="w-full"
+    >
+      {external ? (
+        <a
+          href={to}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 w-full p-2 text-sm whitespace-nowrap rounded-md hover:bg-light-green transition-colors duration-1000 cursor-pointer"
+        >
+          {content}
+        </a>
+      ) : (
+        <Link
+          to={to}
+          className="flex items-center gap-2 w-full p-2 text-sm whitespace-nowrap rounded-md hover:bg-light-green transition-colors duration-1000 cursor-pointer"
+        >
+          {content}
+        </Link>
+      )}
     </motion.li>
   );
 };
 
-
 export default StaggeredDropDown;
 
-const wrapperVariants = {
+// === Variants ===
 
+const wrapperVariants = {
   open: {
     scaleY: 1,
     transition: {
@@ -82,49 +90,29 @@ const wrapperVariants = {
       staggerChildren: 0.1,
     },
   },
-
   closed: {
     scaleY: 0,
     transition: {
       when: "afterChildren",
       staggerChildren: 0.1,
-
     },
   },
 };
 
-
-const iconVariants = {
-
-  open: { rotate: 180 },
-  closed: { rotate: 0 },
-
-};
-
-
 const itemVariants = {
-
   open: {
     opacity: 1,
     y: 0,
-    transition: {
-      when: "beforeChildren",
-    },
+    transition: { when: "beforeChildren" },
   },
-
   closed: {
     opacity: 0,
     y: -15,
-    transition: {
-      when: "afterChildren",
-    },
+    transition: { when: "afterChildren" },
   },
 };
 
-
 const actionIconVariants = {
-
   open: { scale: 1, y: 0 },
   closed: { scale: 0, y: -7 },
-
 };
