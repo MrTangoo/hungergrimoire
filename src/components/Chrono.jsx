@@ -16,6 +16,7 @@ function Chrono({ MinutesCustom }) { // paramètres pour changer les minutes apr
     const {
         seconds,
         minutes,
+        hours,
         isRunning,
         start,
         pause,
@@ -23,11 +24,17 @@ function Chrono({ MinutesCustom }) { // paramètres pour changer les minutes apr
         restart,
     } = useTimer({ expiryTimestamp: time, autoStart: false});
 
-    return(
+    // on calcule les heures à partir des mins
+    const displayHours = hours > 0 ? hours : Math.floor(minutes / 60);
+    const displayMinutes = minutes % 60;
+    const displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    return (
         <div className="flex justify-center items-center">
             <div className="bg-dark-grey rounded-full p-2 w-40 flex items-center justify-center">
                 <div className="text-2xl text-white items-center mr-5">
-                    {minutes}:{seconds < 10 ? `0${seconds}` : seconds} {/* opérateur ternaire, si sec < 10 alors ajt 0 devant, par exemple 9 sec -> 09 sec */}
+                    {displayHours > 0 ? `${displayHours}:` : ''}
+                    {displayMinutes}:{displaySeconds}
                 </div>
                 <div className="flex">
                     <button onClick={isRunning ? pause : resume} className="mr-5">
