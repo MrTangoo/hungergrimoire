@@ -4,8 +4,11 @@ import StopSvg from '../img/svg/pause-v2.svg';
 import RestartSvg from '../img/svg/restart-small.svg';
 
 function Chrono({ MinutesCustom }) {
+  
   const time = new Date();
-  time.setMinutes(time.getMinutes() + MinutesCustom); // Ajoute les minutes au temps actuel
+
+  // Ajoute les minutes spécifiées au temps actuel
+  time.setMinutes(time.getMinutes() + MinutesCustom);
 
   const {
     seconds,
@@ -17,24 +20,24 @@ function Chrono({ MinutesCustom }) {
     restart,
   } = useTimer({ expiryTimestamp: time, autoStart: false });
 
-  // Fonction pour formater les nombres en 2 chiffres
+  // fonction qui formate pour afficher 2 chiffres si < 10 (par exemple 9 = 09)
   const formatTimeUnit = (unit) => {
     return unit < 10 ? `0${unit}` : unit;
   };
 
-  // Calculer les heures, minutes et secondes
   const displayHours = hours;
   const displayMinutes = minutes % 60;
   const displaySeconds = seconds % 60;
 
-  // si les minutes sont plus grand ou égal à 60, alors le width du chrono augmente
-  const isBig = minutes >= 60;
+  // si minutes >= 60 alors on affiche les heures + on augmente le width
+  const showHours = MinutesCustom >= 60;
 
   return (
     <div className="flex justify-center items-center">
-        <div className={`bg-dark-grey rounded-full p-2 flex items-center justify-center ${isBig ? 'w-40' : 'w-55'}`}>
+      <div className={`bg-dark-grey rounded-full p-2 flex items-center justify-center ${showHours ? 'w-52' : 'w-40'}`}>
         <div className="text-2xl text-white items-center mr-5">
-          {formatTimeUnit(displayHours)}:{formatTimeUnit(displayMinutes)}:{formatTimeUnit(displaySeconds)}
+          {showHours && `${formatTimeUnit(displayHours)}:`}
+          {formatTimeUnit(displayMinutes)}:{formatTimeUnit(displaySeconds)}
         </div>
         <div className="flex">
           <button onClick={isRunning ? pause : resume} className="mr-5">
