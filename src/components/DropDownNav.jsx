@@ -34,7 +34,7 @@ const StaggeredDropDown = () => {
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-50%" }}
-          className="flex flex-col gap-2 p-2 rounded-lg bg-lighter-grey shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden"
+          className="flex flex-col gap-2 p-2 rounded-lg bg-lighter-grey shadow-xl absolute top-[120%] left-[50%] w-[1000%] overflow-hidden"
         >
 
           <Option setOpen={setOpen} Icon={FiEdit} text="Edit" />

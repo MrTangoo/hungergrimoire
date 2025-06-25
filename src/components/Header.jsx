@@ -27,8 +27,8 @@ function Header() {
               Rechercher
             </button>
           </div>
-      <DropDownNav />
 
+        <DropDownNav />
         </div>
       </div>
     </>
