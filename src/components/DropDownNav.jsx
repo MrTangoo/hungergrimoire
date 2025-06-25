@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DropDownNavBtn from "./DropDownNavBtn";
+import Carousel from '../components/Carousel';
 
 const StaggeredDropDown = () => {
   const [open, setOpen] = useState(false);
@@ -18,25 +19,35 @@ const StaggeredDropDown = () => {
         <button onClick={() => setOpen((prev) => !prev)}>
           <DropDownNavBtn isOpen={open} />
         </button>
-
         <motion.ul
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-50%" }}
-          className="flex flex-col gap-2 p-2 bg-light-grey shadow-xl absolute top-[100%] left-[50%] w-[100%] overflow-hidden h-dvh"
+          className="flex flex-row justify-between items-start p-2 bg-light-grey shadow-xl absolute top-[100%] left-[50%] w-[100%] overflow-hidden h-dvh"
         >
-          <Option setOpen={setOpen} Icon={FiHome} text="Home" to="/" />
-          <Option setOpen={setOpen} Icon={FiHash} text="About" to="/About" />
-          <Option setOpen={setOpen} Icon={LuSwatchBook} text="Recettes" to="/Recettes" />
-          <Option
-            setOpen={setOpen}
-            Icon={FiGithub}
-            text="GitHub"
-            to="https://github.com/MathieuBurnat/HungerGrimoire/"
-            external
-          />
+          {/* Colonne de gauche */}
+          <div className="flex flex-col gap-2 w-1/3">
+            <Option setOpen={setOpen} Icon={FiHome} text="Home" to="/" />
+            <Option setOpen={setOpen} Icon={FiHash} text="About" to="/About" />
+            <Option setOpen={setOpen} Icon={LuSwatchBook} text="Recettes" to="/Recettes" />
+            <Option
+              setOpen={setOpen}
+              Icon={FiGithub}
+              text="GitHub"
+              to="https://github.com/MathieuBurnat/HungerGrimoire/"
+              external
+            />
+          </div>
+
+          {/* Colonne de droite */}
+          <div className="w-2/3 h-full bg-transparent p-4 flex justify-center items-center">
+            <Carousel 
+              carouselType={"bigCards"}
+            />
+          </div>
         </motion.ul>
       </motion.div>
+
     </div>
   );
 };
@@ -62,14 +73,14 @@ const Option = ({ text, Icon, setOpen, to, external = false }) => {
           href={to}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 w-full p-2 text-sm whitespace-nowrap rounded-md hover:bg-light-green transition-colors duration-1000 cursor-pointer"
+          className="flex items-center gap-2 w-1/3 p-2 text-sm whitespace-nowrap rounded-md hover:bg-dark-green transition-colors duration-1000 cursor-pointer"
         >
           {content}
         </a>
       ) : (
         <Link
           to={to}
-          className="flex items-center gap-2 w-full p-2 text-sm whitespace-nowrap rounded-md hover:bg-light-green transition-colors duration-1000 cursor-pointer"
+          className="flex items-center gap-2 w-1/3 p-2 text-sm whitespace-nowrap rounded-md hover:bg-light-green transition-colors duration-1000 cursor-pointer"
         >
           {content}
         </Link>
