@@ -35,7 +35,6 @@ function IngredientSearchBar({ searchBarWidth = "w-full max-w-md" }) {
     'Melon', 'Pastèque', 'Figues', 'Dattes', 'Pruneaux', 'Abricot sec',
   ];
 
-  // couleurs possibles
   const colorTags = {
     cream: "bg-cream",
     red: "bg-red",
@@ -76,8 +75,16 @@ function IngredientSearchBar({ searchBarWidth = "w-full max-w-md" }) {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter" && inputValue.trim() !== "" && !tags.some(tag => tag.name === inputValue.trim())) {
-      setTags([...tags, { name: inputValue.trim(), color: randomColor() }]);
+    if (e.key === "Enter" && inputValue.trim() !== "") {
+      const inputTrimmed = inputValue.trim();
+      // ça check si l'input matche avec l'ingrédient, si il n'existe pas alors on peut pas créer de tags
+      const isValidIngredient = ingredients.some(ingredient =>
+        ingredient.toLowerCase() === inputTrimmed.toLowerCase()
+      );
+
+      if (isValidIngredient && !tags.some(tag => tag.name === inputTrimmed)) {
+        setTags([...tags, { name: inputTrimmed, color: randomColor() }]);
+      }
       setInputValue("");
     }
   };
