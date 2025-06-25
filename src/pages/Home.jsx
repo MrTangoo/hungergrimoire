@@ -17,6 +17,7 @@ function Home() {
           carouselType="bigCards"
         />
         <Link className='flex items-center justify-center bg-light-grey rounded-lg h-9 px-5' to='./Recettes'>Voir toutes les recettes</Link>
+        <Chrono MinutesCustom={60}/>
     </div>
   );
 }
