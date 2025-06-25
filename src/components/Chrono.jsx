@@ -1,52 +1,56 @@
-import { useState, useEffect } from 'react';
 import { useTimer } from 'react-timer-hook';
 import PlaySvg from '../img/svg/play-small.svg';
 import StopSvg from '../img/svg/pause-v2.svg';
 import RestartSvg from '../img/svg/restart-small.svg';
 
-// Import Composant Chrono dans autres fichier (changer le 5 par les minutes correspondantes à la recette) :
-// Code : <Chrono MinutesCustom={5} />
+function Chrono({ MinutesCustom }) {
+  const time = new Date();
+  time.setMinutes(time.getMinutes() + MinutesCustom); // Ajoute les minutes au temps actuel
 
+  const {
+    seconds,
+    minutes,
+    hours,
+    isRunning,
+    pause,
+    resume,
+    restart,
+  } = useTimer({ expiryTimestamp: time, autoStart: false });
 
-function Chrono({ MinutesCustom }) { // paramètres pour changer les minutes après, je met 5min pour test
+  // Fonction pour formater les nombres en 2 chiffres
+  const formatTimeUnit = (unit) => {
+    return unit < 10 ? `0${unit}` : unit;
+  };
 
-    const time = new Date(); // on crée la variable du temps
-    time.setSeconds(time.getSeconds() + MinutesCustom * 60) // on convertis les secondes en minutes
+  // Calculer les heures, minutes et secondes
+  const displayHours = hours;
+  const displayMinutes = minutes % 60;
+  const displaySeconds = seconds % 60;
 
-    const {
-        seconds,
-        minutes,
-        hours,
-        isRunning,
-        start,
-        pause,
-        resume,
-        restart,
-    } = useTimer({ expiryTimestamp: time, autoStart: false});
+  // si les minutes sont plus grand ou égal à 60, alors le width du chrono augmente
+  const isBig = minutes >= 60;
 
-    // on calcule les heures à partir des mins
-    const displayHours = hours > 0 ? hours : Math.floor(minutes / 60);
-    const displayMinutes = minutes % 60;
-    const displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
-
-    return (
-        <div className="flex justify-center items-center">
-            <div className="bg-dark-grey rounded-full p-2 w-40 flex items-center justify-center">
-                <div className="text-2xl text-white items-center mr-5">
-                    {displayHours > 0 ? `${displayHours}:` : ''}
-                    {displayMinutes}:{displaySeconds}
-                </div>
-                <div className="flex">
-                    <button onClick={isRunning ? pause : resume} className="mr-5">
-                        <img src={isRunning ? StopSvg : PlaySvg} alt={isRunning ? "Stop" : "Play"} />
-                    </button>
-                    <button onClick={() => restart(time)}>
-                        <img src={RestartSvg} alt="Restart" />
-                    </button>
-                </div>
-            </div>
+  return (
+    <div className="flex justify-center items-center">
+        <div className={`bg-dark-grey rounded-full p-2 flex items-center justify-center ${isBig ? 'w-40' : 'w-55'}`}>
+        <div className="text-2xl text-white items-center mr-5">
+          {formatTimeUnit(displayHours)}:{formatTimeUnit(displayMinutes)}:{formatTimeUnit(displaySeconds)}
         </div>
-    );
+        <div className="flex">
+          <button onClick={isRunning ? pause : resume} className="mr-5">
+            <img src={isRunning ? StopSvg : PlaySvg} alt={isRunning ? "Stop" : "Play"} />
+          </button>
+          <button onClick={() => {
+            const newTime = new Date();
+            newTime.setMinutes(newTime.getMinutes() + MinutesCustom);
+            restart(newTime);
+          }}>
+            <img src={RestartSvg} alt="Restart" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Chrono;
