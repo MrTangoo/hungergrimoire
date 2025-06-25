@@ -4,11 +4,7 @@ import Recette from '../components/Recette'
 function About() {
   return (
     <>
-        <h1>About</h1>
-        <Link to='../Recettes'>Lien recette</Link>
-        <Recette 
-          title='Hello world'
-        />
+        <h1 className='w-full h-96 flex flex-col justify-center items-center text-7xl'>About</h1>
     </>
   );
 }
