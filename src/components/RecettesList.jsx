@@ -11,11 +11,13 @@ import PouletRotiImg from "../img/poulet_roti.jpeg"
 import QuicheLoraineImg from "../img/quiche_loraine_img.jpg"
 import SoupeImg from "../img/soupe_img.jpg"
 import TajinImg from "../img/tajine_img.jpg"
+import ChiliConCarneImg from "../img/chili_con_carne_img.jpg"
 
 function RecettesList() {
   const recettesList = [
   {
     nom: "Poulet Curry au riz et à la crème de curry",
+    
     duree: 25,
     personnes: 4,
     image: PouletCurryImg,
@@ -371,6 +373,50 @@ function RecettesList() {
       "Couvrir et laisser mijoter à feu doux pendant 1h15.",
       "Parsemer de coriandre fraîche avant de servir."
     ]
+  },
+  {
+  nom: "Chili con Carne",
+  duree: 75,
+  personnes: 4,
+  image: ChiliConCarneImg,
+  ingredients: [
+    "400 g de viande hachée (bœuf)",
+    "1 oignon",
+    "2 gousses d’ail",
+    "1 poivron rouge",
+    "400 g de tomates concassées",
+    "1 boîte de haricots rouges (400 g)",
+    "2 cuillères à soupe de concentré de tomate",
+    "1 cuillère à café de cumin",
+    "1 cuillère à café de paprika",
+    "1 pincée de piment (ou plus selon le goût)",
+    "Sel",
+    "Poivre",
+    "Huile d’olive"
+  ],
+  ustensiles: [
+    "1 grande casserole ou cocotte",
+    "1 planche à découper",
+    "1 couteau",
+    "1 cuillère en bois",
+    "1 louche"
+  ],
+  etapes: [
+    "Émincer l’oignon, l’ail et le poivron.",
+    "Faire revenir l’oignon et l’ail dans de l’huile d’olive pendant 2-3 minutes.",
+    "Ajouter le poivron et cuire 5 minutes supplémentaires.",
+    <div className="flex pt-4 pb-4" key="chrono-chili">
+      <Chrono MinutesCustom={5} />
+    </div>,
+    "Incorporer la viande hachée et la faire dorer.",
+    "Ajouter les tomates concassées, le concentré de tomate et les haricots rouges égouttés.",
+    "Assaisonner avec le cumin, le paprika, le piment, le sel et le poivre.",
+    "Couvrir et laisser mijoter à feu doux pendant 1 heure en remuant de temps en temps.",
+    <div className="flex pt-4 pb-4" key="chrono-chili">
+      <Chrono MinutesCustom={60} />
+    </div>,
+    "Servir chaud, idéalement avec du riz ou du pain."
+  ]
   }
 ];
 
